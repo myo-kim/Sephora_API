@@ -15,7 +15,7 @@ We seek to predict whether or not an item will go on sale using a combination of
 
 Webscraping datasets:
 
-- [Aggregate ratings]('./datasets_clean/df_ratings_clean.csv')
+- [Aggregate ratings](./datasets_clean/df_ratings_clean.csv)
     - Break down of the count of 1 star, 2 star, 3 star, 4 star, and 5 star ratings as well as the average 
 - Product information 
     - Product details including: product brand name, category, product name, product ID, list price, sale price 
