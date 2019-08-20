@@ -32,7 +32,7 @@ The four datasets above were compiled into one final dataset used in the modelin
 Data description for the final data set: 
 
 |Feature|Type|Description|
-|---|---|---|---|
+|---|---|---|
 |**brand_name**|*object*|Brand name for each product.| 
 |**category**|*object*|Product subcategories that fall into the 4 main categories: face makeup, eye makeup, cheek makeup and lip makeup.|
 |**isLimitedEdition**|*object*|True or False for whether a product is a limited edition version.|
