@@ -17,11 +17,11 @@ Webscraping datasets:
 
 - [Aggregate ratings](./datasets_clean/df_ratings_clean.csv)
     - Break down of the count of 1 star, 2 star, 3 star, 4 star, and 5 star ratings as well as the average 
-- Product information 
+- [Product information](./datasets_clean/df_products_clean.csv) 
     - Product details including: product brand name, category, product name, product ID, list price, sale price 
-- Reviews 
+- [Reviews](./datasets_clean/df_reviews_clean.csv) 
     - Review details and user information such as username, skin type, skin tone, and age range 
-- Keyword summaries
+- [Keyword summaries](./datasets_clean/df_summaries_clean.csv)
     - A count of the top key words found in reviews 
 
 The four datasets above were compiled into one final dataset used in the modeling process. 
@@ -29,7 +29,7 @@ The four datasets above were compiled into one final dataset used in the modelin
 
 ### Data Description
 
-Data description for the final data set: 
+Data description for the [final data set](./datasets_clean/final_dataset.csv): 
 
 |Feature|Type|Description|
 |---|---|---|
