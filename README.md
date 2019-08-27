@@ -57,9 +57,6 @@ The goal of this project is to create a model that can accurately classify a sal
 The first part of the project was to collect data. This involved scraping Sephora's website and understanding their website structure. This required inspecting the elements to find the pattern of the website design. There are four different data sets from the initial scrape: product information, reviews, key words, and aggregate reviews. Keeping these data sets separate made for an easier EDA process. It compartmentalized the different features that were important to the model.
 
 Feature engineering included finding the compound scores for the key words as well as the reviews. Empty values for ratings, reviews and key word scores were imputed with 0. Neural networks are able to understand that 0 values are used to NaN values, therefore in this instance imputing 0 worked. 
-(Be careful about imputing 0 ratings) 
-(Maybe add flag for imputed missing values) 
-(Either have one for each feature or just a flag if there was a missing value in a row??) 
 
 The models used were logistic regression and a feed forward neural network. The logistic regression and neural network had very similar accuracy scores. The neural network was used to see if it would handle the zero values differently. 
 
@@ -67,8 +64,13 @@ The models used were logistic regression and a feed forward neural network. The 
 
 ### Conclusion and Next Steps 
 
-The metrics used to score my model were accuracy as this is a classification problem. The final model had an accuracy score of 96% on training data and 95.6% on testing data. This model only works at this current time frame as the data is only a snapshot of when the data was collected and does not include previous items that have gone on sale. Another limitation is that the compound scores for the reviews are not representative of the entire reviews. The reviews collected only go back 6 pages (if there are 6 pages of reviews to scrape) which is a total of 30 reviews. The sample size is quite small but given the time restrictions, I was unable to scrape all of the reviews available on the website. 
+The model performed best using scaled data and incorporating balanced classes. While not incorporating balanced classes allowed for a much higher accuracy score, the model also did so well because it was not predicting any items going on sale. Brand name was removed as a feature in later models to see if other factors could be utilized to predict whether an item will go on sale. Brand name was also removed as certain brands might only be on sale given this time frame.  
 
+There were many limitations with this model.This model only works at this current time frame as the data is only a snapshot of when the data was collected and does not include previous items that have gone on sale. Another limitation is that the compound scores for the reviews are not representative of the entire reviews. The reviews collected only go back 6 pages (if there are 6 pages of reviews to scrape) which is a total of 30 reviews. The sample size is quite small but given the time restrictions, I was unable to scrape all of the reviews available on the website. 
+
+In an ideal scenario, all reviews would be scraped and as well as all products. Having the full picture for the reviews has the potential to have more answers than just the small sameple of 30. While having the keywords offset some of the impact of only using the small samples for reviews, it does not in any way make up for the lack of the full review set.
+
+The best model to use in order to classify sale vs. regular priced products would be a model that is able to balance the specificity and sensitivity trade off (meaning a good ROC AUC score) as well as having a high accuracy score. The model in this instance is one that utilized scoring as accuracy, with scaled data, had a balanced class and did not refit with the ROC AUC score as the refitting metric. The training score was 86% while and testing score was 87.9%. The ROC AUC score was .88.
 
 ---
 
